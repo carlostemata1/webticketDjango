@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>id</td>
+			<td>nombre</td>
+			<td>nit</td>
+			<td>telefono</td>
+			<td>direccion</td>
+			<td>correo</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for empresa in object_list %}
+		<tr>
+			<td>{{ empresa.id }}</td>
+			<td>{{ empresa.nombre }}</td>
+			<td>{{ empresa.nit }}</td>
+			<td>{{ empresa.telefono }}</td>
+			<td>{{ empresa.direccion }}</td>
+			<td>{{ empresa.correo }}</td>
+			<td>
+				<a class="btn btn-primary" href="">Editar</a>
+				<a class="btn btn-danger" href="">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de Empresas</h1>
+		{% endif %}
+	</tbody>
+</table> 
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Next</a> 
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}

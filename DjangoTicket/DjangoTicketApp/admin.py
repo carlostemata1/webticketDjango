@@ -1,3 +1,8 @@
 from django.contrib import admin
+from DjangoTicketApp.models import *
 
-# Register your models here.
+admin.site.register(Empresa)
+admin.site.register(HistoriaUsuario)
+admin.site.register(TicketDesarrollo)
+admin.site.register(ProyectoDesarrollo)
+admin.site.register(Estado)

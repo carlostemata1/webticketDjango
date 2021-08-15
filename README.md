@@ -15,13 +15,13 @@
 # Correr el proyecto
 
     0. Revisar si el entorno esta encidido de lo contrario encenderlo
-    1. Ir a la carpeta Backend/src/api (En la terminal ```cd $(pwd)/Backend/src/api```)
+    1. Ir a la carpeta DjangoTicket
     2. Ejecutar ```python manage.py runserver```
     3. Ctrl + C para apagar
 
 # Base de datos
 
-mysql, el drop quedara en la carpeta drop
+postsgrest, el drop quedara en la carpeta drop
 
 ## Generalidades
 

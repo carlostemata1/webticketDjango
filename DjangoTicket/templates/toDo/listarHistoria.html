@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+            <td>#</td>
+			<td>proyecto asociado</td>
+			<td>descripcion de la historia</td>
+			<td>opciones</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for proyecto in object_list %}
+		<tr>
+			<td>{{ proyeto.id }}</td>
+			<td>{{ proyecto.idProyectoDesarrollo }}</td>
+			<td>{{ proyecto.descripcion }}</td>
+			<td>
+				<a class="btn btn-primary" href="">ver tickets</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de Historias</h1>
+		{% endif %}
+	</tbody>
+</table> 
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Next</a> 
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}
